@@ -17,7 +17,7 @@ For each commit and issue it provides a link plus other data in a markdown docum
 - JIRA_AUTH_TOKEN (A Jira access token that has permissions to the projects)
 - JIRA_AUTH_EMAIL (The Jira email associated to the access token)
 
-### Command Line Execution
+## Command Line Execution
 
     >node ReleaseNotes.js <github_owner> <repository_1> <repository_2> <repository_n>
 
