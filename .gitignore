@@ -1,6 +1,9 @@
 # Jet Brains
 .idea
 
+# output
+output
+
 # Logs
 logs
 *.log
