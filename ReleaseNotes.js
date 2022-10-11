@@ -25,4 +25,10 @@ for (const repository of repositories) {
 
 let template = fs.readFileSync("./template.md").toString()
 let output = mustache.render(template, releaseNotesDoc)
-fs.writeFileSync(`./output/release_notes_${new Date().getTime()}.md`, output)
+
+var outputDir = './output';
+
+if (!fs.existsSync(outputDir)){
+    fs.mkdirSync(outputDir);
+}
+fs.writeFileSync(`${outputDir}/release_notes_${new Date().getTime()}.md`, output)
