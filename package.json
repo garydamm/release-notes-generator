@@ -1,0 +1,9 @@
+{
+  "name": "release-notes-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "octokit": "^2.0.7",
+    "node-fetch": "^3.2.10"
+  }
+}
