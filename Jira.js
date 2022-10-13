@@ -6,12 +6,16 @@ const token = process.env.JIRA_AUTH_TOKEN
 export default async function buildIssueObject(owner, key) {
     const url = `https://${owner}.atlassian.net/rest/agile/1.0/issue/${key}?fields=key&fields=customfield_10131&fields=summary&fields=assignee&fields=status`
     let response = await fetch(url, {
-        method: 'GET', headers: {
+        method: 'GET',
+        headers: {
             'Authorization': `Basic ${Buffer.from(email + ":" + token).toString('base64')}`,
             'Accept': 'application/json'
         }
     })
-    if (response.status != 200) throw Error(`Received error from Jira status ${response.status} text ${response.statusText}`)
+    if (response.status != 200) {
+        console.log(`Error looking up issue ${key} in Jira`)
+        return null
+    }
 
     let data = await response.text()
     let jiraObject = JSON.parse(data)

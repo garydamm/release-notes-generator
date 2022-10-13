@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+{{#repositories}}
+<h2>{{repository}}</h2>
+<p>latest: {{latest_tag}} previous: {{previous_tag}}</p>
+{{#commits}}
+<hr/>
+<h3>GitHub Commit <a href='https://github.com/{{owner}}/{{repository}}/commit/{{sha}}'>{{sha}}</a></h3>
+<p>message: {{message}}</p>
+<p>author: {{author}}</p>
+{{#jira_issues}}
+<h4>Jira Issue <a href='https://{{owner}}.atlassian.net/browse/{{key}}'>{{key}}</a></h4>
+<p>summary: {{summary}}</p>
+<p>release note: {{release_note_text}}</p>
+<p>assignee: {{assignee}}</p>
+<p>status: {{status}}</p>
+{{/jira_issues}}
+{{/commits}}
+{{/repositories}}

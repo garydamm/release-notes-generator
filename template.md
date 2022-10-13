@@ -1,4 +1,4 @@
-# {{owner}} Release Notes {{date}}
+# {{title}}
 
 {{#repositories}}
 ## {{repository}} 

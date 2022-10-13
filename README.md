@@ -17,6 +17,10 @@ For each commit and issue it provides a link plus other data in a markdown docum
 - JIRA_AUTH_TOKEN (A Jira access token that has permissions to the projects)
 - JIRA_AUTH_EMAIL (The Jira email associated to the access token)
 
+#### Optional (to publish to Confluence)
+- CONFLUENCE_SPACE_KEY (The space key you want to publish to)
+- CONFLUENCE_PARENT_PAGE_ID (An optional parent page you want to use)
+
 ### Command Line Execution
 
     >node ReleaseNotes.js <github_owner> <repository_1> <repository_2> <repository_n>

@@ -68,7 +68,9 @@ async function buildCommitObject(owner, commit) {
     if (isIterable(jiraKeys)) {
         for (const key of jiraKeys) {
             let jiraObject = await buildJiraObject(owner,key)
-            jiraIssues.push(jiraObject)
+            if (jiraObject != null) {
+                jiraIssues.push(jiraObject)
+            }
         }
     }
     let commitObject = {
