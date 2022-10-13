@@ -19,7 +19,6 @@ export default async function createDocument(owner, title, html) {
         ancestors = `,"ancestors" : [{"type":"page","id":"${parentPageID}"}]`
     }
     let htmlWithNewlinesRemoved = html.replace(/\r?\n|\r/g, "")
-    console.log(htmlWithNewlinesRemoved)
     const body = `{"type": "page", "title": "${title}","space": {"key": "${spaceKey}" } ${ancestors}, "body": {"storage": {"value": "${htmlWithNewlinesRemoved}","representation": "storage"}}}`
 
     let response = await fetch(url, {
